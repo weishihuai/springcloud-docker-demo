@@ -1,0 +1,23 @@
+server:
+  port: 4444
+spring:
+  application:
+    name: api-gateway
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    #服务注册中心地址
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+#配置路由匹配规则
+zuul:
+  routes:
+    #名字任意取
+    punishment:
+      #配置请求punishment-service服务的路径
+      path: /punishment/**
+      #请求服务的serviceId
+      serviceId: punishment-service
+      #真正访问的接口地址
+#      url: http://localhost:2222
