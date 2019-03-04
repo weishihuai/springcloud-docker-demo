@@ -1,0 +1,12 @@
+server:
+  port: 3333
+spring:
+  application:
+    name: student-service
+eureka:
+  client:
+    serviceUrl:
+      #服务注册中心地址
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    prefer-ip-address: true
