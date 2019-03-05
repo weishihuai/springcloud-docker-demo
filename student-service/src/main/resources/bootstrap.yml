@@ -1,0 +1,16 @@
+server:
+  port: 3333
+spring:
+  application:
+    name: studentservice
+  cloud:
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: config-server
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/

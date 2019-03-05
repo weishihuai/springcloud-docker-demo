@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @Date: 2019/3/4 14:37
  * 说明: 声明该类为远程服务调用接口,并且制定需指定要调用服务的serviceId,并且可以指定远程调用失败回调类
  */
-@FeignClient(value = "student-service", fallback = StudentFeignClientFallback.class)
+@FeignClient(value = "studentservice", fallback = StudentFeignClientFallback.class)
 public interface StudentFeignClient {
 
     /**

@@ -1,0 +1,16 @@
+server:
+  port: 4444
+spring:
+  application:
+    name: apigateway
+  cloud:
+    config:
+      discovery:
+        service-id: config-server
+        enabled: true
+      profile: dev
+      label: master
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
