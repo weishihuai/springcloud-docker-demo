@@ -1,5 +1,5 @@
 server:
-  port: 5555
+  port: ${port:5555}
 spring:
   application:
     name: config-server
@@ -7,12 +7,12 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/weixiaohuai/config-server.git
-#          search-paths: repository
-#          username: xxx
-#          password: xxx
+          uri: ${gitRepositoryUrl:https://gitee.com/weixiaohuai/config-server.git}
           default-label: master
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:1111/eureka/
+      defaultZone: ${eurekaServerUrl:http://localhost:1111/eureka/}
+  instance:
+    ip-address: ${ipAddress:127.0.0.1}
+    prefer-ip-address: true

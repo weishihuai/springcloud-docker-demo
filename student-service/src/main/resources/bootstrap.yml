@@ -1,5 +1,5 @@
 server:
-  port: 3333
+  port: ${port:3333}
 spring:
   application:
     name: studentservice
@@ -13,4 +13,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:1111/eureka/
+      defaultZone: ${eurekaServerUrl:http://localhost:1111/eureka/}
+  instance:
+    ip-address: ${ipAddress:127.0.0.1}
+    prefer-ip-address: true
